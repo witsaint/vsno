@@ -1,0 +1,46 @@
+{
+  "name": "@vsno/host",
+  "type": "module",
+  "version": "0.0.2",
+  "description": "Host package for VSCode Extensionon",
+  "author": "witsaint",
+  "license": "MIT",
+  "keywords": [
+    "vsno",
+    "host",
+    "utilities",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "build-release": "unbuild",
+    "dev": "unbuild --dev",
+    "clean": "rm -rf dist",
+    "lint": "eslint . --cache",
+    "test": "vitest run --passWithNoTests",
+    "test:coverage": "vitest run --coverage",
+    "test-unit": "vitest run --passWithNoTests",
+    "test-unit-watch": "vitest watch",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:cli",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:cli",
+    "typescript": "catalog:cli",
+    "unbuild": "catalog:cli",
+    "vitest": "catalog:testing"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "@vsno/vsno",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A starter template for building Mono-repo",
+  "author": "witsaint",
+  "license": "MIT",
+  "keywords": [
+    "vscode",
+    "starter",
+    "template",
+    "monorepo"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "build-release": "unbuild",
+    "dev": "unbuild --dev",
+    "lint": "eslint . --cache --cache-location .cache/eslint/main.eslintcache",
+    "test": "npm-run-all test-unit",
+    "test-unit": "vitest run --passWithNoTests",
+    "test-unit-watch": "vitest watch --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:report": "node scripts/test-report.js",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "lint-staged-files": "lint-staged --allow-empty",
+    "postinstall": "pnpm build",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:cli",
+    "@types/node": "catalog:types",
+    "@vitest/coverage-v8": "catalog:",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:cli",
+    "lint-staged": "catalog:cli",
+    "npm-run-all": "catalog:",
+    "simple-git-hooks": "catalog:cli",
+    "tinyexec": "catalog:utils",
+    "tsx": "catalog:cli",
+    "typescript": "catalog:cli",
+    "unbuild": "catalog:cli",
+    "vitest": "catalog:testing",
+    "vitest-package-exports": "catalog:testing"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
