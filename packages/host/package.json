@@ -1,7 +1,7 @@
 {
   "name": "@vsno/host",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Host package for VSCode Extensionon",
   "author": "witsaint",
   "license": "MIT",
@@ -9,6 +9,8 @@
     "vsno",
     "host",
     "utilities",
+    "vscode",
+    "extension",
     "types"
   ],
   "exports": {
@@ -34,6 +36,9 @@
     "test-unit": "vitest run --passWithNoTests",
     "test-unit-watch": "vitest watch",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@types/vscode": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:cli",

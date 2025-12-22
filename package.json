@@ -29,8 +29,7 @@
     "test:report": "node scripts/test-report.js",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "lint-staged-files": "lint-staged --allow-empty",
-    "postinstall": "pnpm build",
-    "preinstall": "npx only-allow pnpm"
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:cli",
