@@ -4,13 +4,13 @@ export interface WebviewContext {
   panel: WebviewPanel
   webview: Webview
   disposables: Disposable[]
-  sendAsyncMessage: (msg: any) => Promise<any>
+  postMessage: (msg: any) => Thenable<boolean>
   getLanguage: () => string
   getTheme: () => number
   // 你可以继续挂更多“hook”能力
 }
 
-export interface FlatWebviewOptions {
+export interface WebviewOptions {
   moduleName: string
   onMount?: (ctx: WebviewContext) => void | Promise<void>
   onDispose?: (ctx: WebviewContext) => void | Promise<void>
