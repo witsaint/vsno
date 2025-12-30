@@ -10,7 +10,7 @@ type ServerUrl = URL | string | {
   path: string
 }
 
-interface BundleHtmlOptions {
+export interface BundleHtmlOptions {
   extensionUri: Uri
   webview: Webview
   htmlPath: string
